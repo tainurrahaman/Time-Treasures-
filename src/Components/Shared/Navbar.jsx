@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="navbar px-4 sm:px-6 lg:px-8 bg-base-100">
       {/* Navbar Start: Logo and Mobile Menu */}
-      <div className="navbar-start gap-2 md:gap-4">
+      <div className="navbar-start gap-2 ">
         {/* Mobile Menu Dropdown */}
         <div className="dropdown">
           <div
@@ -59,11 +59,13 @@ const Navbar = () => {
 
         {/* Logo and Brand Name */}
         <div className="max-w-8 md:max-w-10">
-          {/* <img src={logo} alt="Website Logo" className="rounded-full" /> */}
+          <img
+            src="https://i.ibb.co.com/vC4SPKnX/Leonardo-Phoenix-10-A-intricately-designed-website-logo-with-a-3.jpg"
+            alt="Website Logo"
+            className="rounded-full"
+          />
         </div>
-        <a className="text-[#034833] font-bold text-lg md:text-2xl lg:text-3xl">
-          VisaHub
-        </a>
+        <a className="text-[#A0153E] font-bold text-lg ">AntiqueArchives</a>
       </div>
 
       {/* Navbar Center: Desktop Menu */}
@@ -73,7 +75,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/visas">All Visas</Link>
+            <Link to="/visas">All Artifacts</Link>
           </li>
           {/* {user?.email && (
             <>
@@ -108,25 +110,24 @@ const Navbar = () => {
             </div>
             {/* Logout Button */}
             <Link
-              onClick={handleLogout}
+              // onClick={handleLogout}
               to="/"
-              className="btn bg-[#034833] text-white"
+              className="btn bg-[#A0153E] text-gray-400"
             >
               Logout
             </Link>
           </div>
         ) : (
           <div className="space-x-2">
-            <Link to="/signup" className="font-bold">
+            <Link to="/signUp" className="font-semibold text-gray-300">
               SignUp
             </Link>
-            <Link to="/login" className="btn bg-[#034833] text-white">
+            <Link to="/signIn" className="btn bg-[#A0153E] text-gray-100">
               Login
             </Link>
           </div>
         )}
       </div>
-
       <ToastContainer />
     </div>
   );

@@ -1,2 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+  --font-bebas-neue: "Bebas Neue", serif;
+  --font-roboto: "Roboto", sans-serif;
+}
