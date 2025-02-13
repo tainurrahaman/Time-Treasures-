@@ -1,14 +1,36 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logoutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutUser()
+      .then(() => {
+        toast("Successfully Logout");
+      })
+      .catch((err) => {
+        toast(err.message);
+      });
+  };
+
   return (
     <div className="navbar px-4 sm:px-6 lg:px-8 bg-base-100">
       {/* Navbar Start: Logo and Mobile Menu */}
       <div className="navbar-start gap-2 ">
+        {/* Logo and Brand Name */}
+        <div className="max-w-8 md:max-w-10">
+          <img
+            src="https://i.ibb.co.com/vC4SPKnX/Leonardo-Phoenix-10-A-intricately-designed-website-logo-with-a-3.jpg"
+            alt="Website Logo"
+            className="rounded-full"
+          />
+        </div>
+        <a className="text-[#A0153E] hidden md:block font-bold text-lg ">
+          AntiqueArchives
+        </a>
         {/* Mobile Menu Dropdown */}
         <div className="dropdown">
           <div
@@ -33,7 +55,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow font-semibold"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow "
           >
             <li>
               <Link to="/">Home</Link>
@@ -41,7 +63,7 @@ const Navbar = () => {
             <li>
               <Link to="/visas">All Visas</Link>
             </li>
-            {/* {user?.email && (
+            {user?.email && (
               <>
                 <li>
                   <Link to="/addVisa">Add Visa</Link>
@@ -53,31 +75,21 @@ const Navbar = () => {
                   <Link to="/userAddedVisa">My Added Visa</Link>
                 </li>
               </>
-            )} */}
+            )}
           </ul>
         </div>
-
-        {/* Logo and Brand Name */}
-        <div className="max-w-8 md:max-w-10">
-          <img
-            src="https://i.ibb.co.com/vC4SPKnX/Leonardo-Phoenix-10-A-intricately-designed-website-logo-with-a-3.jpg"
-            alt="Website Logo"
-            className="rounded-full"
-          />
-        </div>
-        <a className="text-[#A0153E] font-bold text-lg ">AntiqueArchives</a>
       </div>
 
       {/* Navbar Center: Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-4 font-semibold">
+        <ul className="menu menu-horizontal px-1 gap-4 ">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/visas">All Artifacts</Link>
           </li>
-          {/* {user?.email && (
+          {user?.email && (
             <>
               <li>
                 <Link to="/addVisa">Add Visa</Link>
@@ -89,7 +101,7 @@ const Navbar = () => {
                 <Link to="/userAddedVisa">My Added Visa</Link>
               </li>
             </>
-          )} */}
+          )}
         </ul>
       </div>
 
@@ -110,9 +122,9 @@ const Navbar = () => {
             </div>
             {/* Logout Button */}
             <Link
-              // onClick={handleLogout}
+              onClick={handleLogout}
               to="/"
-              className="btn bg-[#A0153E] text-gray-400"
+              className="btn text-[10px] md:text-[16px] bg-[#A0153E] text-gray-100"
             >
               Logout
             </Link>

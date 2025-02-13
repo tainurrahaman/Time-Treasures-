@@ -23,13 +23,6 @@ const SignUp = () => {
         navigate("/");
         toast("Registration Successful..");
         console.log(user);
-        // userUpdateProfile({ displayName: name, photoURL: photo })
-        //   .then(() => {
-        //     navigate("/");
-        //   })
-        //   .catch(() => {
-        //     toast("Give valid information");
-        //   });
       })
       .catch((err) => {
         toast(err.message);
@@ -37,15 +30,15 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-center font-roboto items-center mt-5">
-      <div className=" rounded-md px-14 py-8  w-[500px]">
-        <div className=" border-2 border-gray-400 p-5 md:p-10 rounded-lg">
-          <h2 className="text-3xl md:text-5xl font-bebas-neue text-center mb-5 md:mb-10">
+    <div className="flex justify-center font-roboto items-center mt-5 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md md:max-w-lg lg:max-w-xl rounded-md px-6 py-8 sm:px-8 md:px-10 lg:px-12">
+        <div className="border-2 border-gray-400 p-4 sm:p-6 md:p-8 lg:p-10 rounded-lg">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bebas-neue text-center mb-5 md:mb-8 lg:mb-10">
             Registration Here
           </h2>
           <form onSubmit={handleRegistration}>
-            <div className="mb-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <div className="mb-4">
+              <label className="block text-sm sm:text-base font-semibold text-gray-700 mb-1">
                 Name
               </label>
               <input
@@ -57,8 +50,8 @@ const SignUp = () => {
               />
             </div>
 
-            <div className="mb-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <div className="mb-4">
+              <label className="block text-sm sm:text-base font-semibold text-gray-700 mb-1">
                 Email
               </label>
               <input
@@ -69,8 +62,9 @@ const SignUp = () => {
                 required
               />
             </div>
-            <div className="mb-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
+
+            <div className="mb-4">
+              <label className="block text-sm sm:text-base font-semibold text-gray-700 mb-1">
                 Photo URL
               </label>
               <input
@@ -82,8 +76,8 @@ const SignUp = () => {
               />
             </div>
 
-            <div className="mb-2">
-              <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <div className="mb-4">
+              <label className="block text-sm sm:text-base font-semibold text-gray-700 mb-1">
                 Password
               </label>
               <input
@@ -99,36 +93,36 @@ const SignUp = () => {
               Registration
             </button>
 
-            <p className="text-md text-center text-gray-600">
-              Already have an account ?
+            <p className="text-sm sm:text-base text-center text-gray-600">
+              Already have an account?{" "}
               <Link
                 to="/signIn"
                 className="text-blue-600 font-semibold hover:underline"
               >
-                {" "}
                 Login
               </Link>
             </p>
           </form>
         </div>
         <div>
-          <div className="divider my-6">Or</div>
+          <div className="divider my-4 sm:my-6">Or</div>
 
           <div className="flex justify-center items-center">
-            <div className="space-y-4 ">
+            <div className="space-y-4 w-full">
               <Link
-                // onClick={handleWithGoogleSignup}
                 to="/"
-                className="btn btn-outline  w-[300px] flex items-center justify-center space-x-2  rounded-full"
+                className="btn btn-outline w-full max-w-xs sm:max-w-sm md:max-w-md flex items-center justify-center space-x-2 rounded-full"
               >
-                <FcGoogle className=" h-[37px] w-[37px]" />
-                <span>Continue with Google</span>
+                <FcGoogle className="h-6 w-6 sm:h-8 sm:w-8" />
+                <span className="text-sm sm:text-base">
+                  Continue with Google
+                </span>
               </Link>
             </div>
           </div>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 };
