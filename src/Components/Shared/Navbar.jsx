@@ -66,7 +66,7 @@ const Navbar = () => {
             {user?.email && (
               <>
                 <li>
-                  <Link to="/addVisa">Add Visa</Link>
+                  <Link to="/addArtifacts">Add Artifacts</Link>
                 </li>
                 <li>
                   <Link to="/visaApplication">My Visa Application</Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
           {user?.email && (
             <>
               <li>
-                <Link to="/addVisa">Add Visa</Link>
+                <Link to="/addArtifacts">Add Artifacts</Link>
               </li>
               <li>
                 <Link to="/visaApplication">My Visa Application</Link>
