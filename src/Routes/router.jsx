@@ -5,6 +5,7 @@ import SignIn from "../Components/Authentication/SignIn";
 import AddArtifactPage from "../Components/Pages/AddArtifactPage";
 import AllArtifacts from "../Components/Pages/AllArtifacts";
 import PrivateRoute from "./PrivateRoute";
+import ArtifactDetails from "../Components/Pages/ArtifactDetails";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
     path: "/allArtifacts",
     element: <AllArtifacts></AllArtifacts>,
     loader: () => fetch("http://localhost:5000/artifacts/all"),
+  },
+  {
+    path: "/allArtifacts/:id",
+    element: (
+      <PrivateRoute>
+        <ArtifactDetails></ArtifactDetails>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/signUp",

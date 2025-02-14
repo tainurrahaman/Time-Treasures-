@@ -52,7 +52,7 @@ const AllArtifacts = () => {
           >
             <div className="mb-3">
               <img
-                className="w-full rounded-t-md h-32 sm:h-40 md:h-48 object-cover"
+                className="w-full rounded-t-md h-32 sm:h-40 md:h-48 object-center"
                 src={artifact.photo}
                 alt="Artifact Photo"
               />
@@ -65,8 +65,8 @@ const AllArtifacts = () => {
               </div>
               <div className="flex justify-center items-center mt-3">
                 <Link
-                  to={`/artifacts/${artifact._id}`}
-                  state={artifact}
+                  to={`/allArtifacts/${artifact._id}`}
+                  //   artifact={artifact}
                   className="btn w-full bg-[#A0153E] text-white hover:bg-gray-700 text-xs sm:text-sm md:text-base"
                 >
                   View Details
