@@ -26,7 +26,7 @@ const History = () => {
           <h4 className="font-bold text-2xl sm:text-3xl md:text-4xl">
             The Great Beginning
           </h4>
-          <p className="text-gray-300 text-sm sm:text-base md:text-[16px] pr-0 sm:pr-4 md:pr-5">
+          <p className=" text-sm sm:text-base md:text-[16px] pr-0 sm:pr-4 md:pr-5">
             The MooM Art Collections is founded by a group of artists and
             patrons prompted by the government's inadequate museum funding. By
             its first meeting, it has 308 members and $700 in funds.

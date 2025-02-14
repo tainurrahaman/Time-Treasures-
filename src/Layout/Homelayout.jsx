@@ -3,6 +3,7 @@ import Footer from "../Components/Shared/Footer";
 import Banner from "../Components/Banner";
 import Vision from "../Components/Vision";
 import History from "../Components/History";
+import MostLikedArtifact from "../Components/Pages/MostLikedArtifact";
 
 const Homelayout = () => {
   return (
@@ -11,6 +12,7 @@ const Homelayout = () => {
         <Navbar></Navbar>
         <Banner></Banner>
         <History></History>
+        <MostLikedArtifact></MostLikedArtifact>
         <Vision></Vision>
       </div>
       <Footer></Footer>
