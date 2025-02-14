@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SignIn = () => {
   const { logInUser, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        navigate("/");
+        navigate(from);
         toast("Login Successful");
       })
       .catch((err) => {

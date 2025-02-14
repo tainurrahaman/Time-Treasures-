@@ -61,7 +61,7 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/visas">All Visas</Link>
+              <Link to="/allArtifacts">All Artifact</Link>
             </li>
             {user?.email && (
               <>
@@ -87,7 +87,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/visas">All Artifacts</Link>
+            <Link to="/allArtifacts">All Artifact</Link>
           </li>
           {user?.email && (
             <>
@@ -131,7 +131,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="space-x-2">
-            <Link to="/signUp" className="font-semibold text-gray-300">
+            <Link to="/signUp" className="font-semibold text-gray-700">
               SignUp
             </Link>
             <Link to="/signIn" className="btn bg-[#A0153E] text-gray-100">
