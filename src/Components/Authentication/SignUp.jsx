@@ -32,7 +32,7 @@ const SignUp = () => {
           photoURL: photo,
         }).then(() => {
           // Save user data to MongoDB
-          fetch("http://localhost:5000/users", {
+          fetch("https://time-treasures-server.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",

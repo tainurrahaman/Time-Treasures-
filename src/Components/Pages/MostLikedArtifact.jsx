@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MostLikedArtifact = () => {
   const [mostLiked, setMostLiked] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/artifacts/mostLiked")
+    fetch("https://time-treasures-server.vercel.app/artifacts/mostLiked")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

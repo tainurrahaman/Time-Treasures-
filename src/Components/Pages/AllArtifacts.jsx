@@ -6,41 +6,46 @@ const AllArtifacts = () => {
   const loadedArtifact = useLoaderData();
   const [filteredArtifacts, setfilteredArtifacts] = useState(loadedArtifact);
   const [selectedType, setSelectedType] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleFilterChange = (event) => {
-    const type = event.target.value;
-    setSelectedType(type);
-
-    if (type === "all") {
+  // Handle search functionality
+  const handleSearch = () => {
+    if (searchQuery.trim() === "") {
       setfilteredArtifacts(loadedArtifact);
     } else {
-      const filtered = loadedArtifact.filter(
-        (artifact) => artifact.type === type
+      const filtered = loadedArtifact.filter((data) =>
+        data.artifacts_name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setfilteredArtifacts(filtered);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
     }
   };
 
   return (
     <div className="w-11/12 mx-auto my-4">
       <Navbar></Navbar>
-      {/* Filter Dropdown */}
-      <div className="my-4">
-        <label htmlFor="artifact-type-filter" className="mr-4 font-semibold">
-          Filter by Artifact Type:
-        </label>
-        <select
-          id="artifact-type-filter"
-          className="select select-bordered"
-          value={selectedType}
-          onChange={handleFilterChange}
+
+      {/* Search Input and Button */}
+      <div className="flex justify-center mt-5 flex-col sm:flex-row gap-3 mb-6 sm:mb-8">
+        <input
+          type="text"
+          placeholder="Search by artifacts name..."
+          className="input input-bordered w-full sm:max-w-xs"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <button
+          onClick={handleSearch}
+          className="btn bg-[#A0153E] hover:bg-pink-950 text-white"
         >
-          <option value="all">All Artifact</option>
-          <option value="Writings">Writings</option>
-          <option value="Tools">Tools</option>
-          <option value="Documents">Document</option>
-          <option value="Weapons">Weapons</option>
-        </select>
+          Search
+        </button>
       </div>
 
       {/* Artifacts Grid */}

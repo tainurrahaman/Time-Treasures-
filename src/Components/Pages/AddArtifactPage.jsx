@@ -43,7 +43,7 @@ const AddArtifactPage = () => {
       location,
     };
 
-    fetch("http://localhost:5000/artifacts", {
+    fetch("https://time-treasures-server.vercel.app/artifacts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

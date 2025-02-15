@@ -26,7 +26,8 @@ const router = createBrowserRouter([
   {
     path: "/allArtifacts",
     element: <AllArtifacts></AllArtifacts>,
-    loader: () => fetch("http://localhost:5000/artifacts/all"),
+    loader: () =>
+      fetch("https://time-treasures-server.vercel.app/artifacts/all"),
   },
   {
     path: "/allArtifacts/:id",

@@ -20,7 +20,7 @@ const UserAddedArtifactPage = ({ data, artifacts, setartifacts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/artifacts/all/${id}`, {
+        fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

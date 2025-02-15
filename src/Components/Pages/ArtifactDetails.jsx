@@ -9,7 +9,7 @@
 //   const [artifact, setArtifact] = useState(null);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/artifacts/all/${id}`)
+//     fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setArtifact(data);
@@ -96,7 +96,7 @@ const ArtifactDetails = () => {
   const [likeCount, setLikeCount] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/artifacts/all/${id}`)
+    fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArtifact(data);
@@ -110,7 +110,7 @@ const ArtifactDetails = () => {
     const updateCount = { count };
     console.log(updateCount);
 
-    fetch(`http://localhost:5000/artifacts/all/${id}/like`, {
+    fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}/like`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

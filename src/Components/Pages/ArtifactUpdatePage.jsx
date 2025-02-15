@@ -48,13 +48,16 @@ const ArtifactUpdatePage = () => {
     };
     console.log(newArtifacts);
 
-    fetch(`http://localhost:5000/artifacts/all/${artifactData._id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newArtifacts),
-    })
+    fetch(
+      `https://time-treasures-server.vercel.app/artifacts/all/${artifactData._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newArtifacts),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
