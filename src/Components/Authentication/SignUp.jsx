@@ -36,7 +36,6 @@ const SignUp = () => {
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(newUser);
         // Update user profile with display name and photo URL
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -75,7 +74,7 @@ const SignUp = () => {
         setUser(user);
       })
       .catch((err) => {
-        console.log(err);
+        toast(err);
       });
   };
 

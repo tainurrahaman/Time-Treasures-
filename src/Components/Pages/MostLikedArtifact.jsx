@@ -8,7 +8,6 @@ const MostLikedArtifact = () => {
     fetch("https://time-treasures-server.vercel.app/artifacts/mostLiked")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMostLiked(data);
       });
   }, []);

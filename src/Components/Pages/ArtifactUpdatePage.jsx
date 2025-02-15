@@ -10,7 +10,6 @@ const ArtifactUpdatePage = () => {
   const location = useLocation();
   const artifactData = location.state;
   const navigate = useNavigate();
-  console.log(artifactData);
 
   const ArtifactsTypes = [
     "Writings",
@@ -46,7 +45,6 @@ const ArtifactUpdatePage = () => {
       discover_by,
       location,
     };
-    console.log(newArtifacts);
 
     fetch(
       `https://time-treasures-server.vercel.app/artifacts/all/${artifactData._id}`,

@@ -10,7 +10,6 @@ const SignIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
-  console.log(location);
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -34,12 +33,11 @@ const SignIn = () => {
     loginWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
         setUser(user);
         navigate(from);
       })
       .catch((err) => {
-        console.log(err);
+        toast(err);
       });
   };
 

@@ -1,88 +1,3 @@
-// import { useContext, useEffect, useState } from "react";
-// import Navbar from "../Shared/Navbar";
-// import { useParams } from "react-router-dom";
-// import { AuthContext } from "../../Provider/AuthProvider";
-
-// const ArtifactDetails = () => {
-//   const { loading } = useContext(AuthContext);
-//   const { id } = useParams();
-//   const [artifact, setArtifact] = useState(null);
-
-//   useEffect(() => {
-//     fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}`)
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setArtifact(data);
-//       });
-//   }, [id]);
-
-//   if (!artifact) {
-//     return loading;
-//   }
-
-//   return (
-//     <div className="w-11/12 mx-auto my-4">
-//       <Navbar></Navbar>
-//       <div className=" p-6 rounded-md ">
-//         {artifact?.email ? (
-//           <div className="w-full md:w-2/3 lg:w-1/2 mx-auto bg-gray-100 p-0 md:p-5 rounded-lg">
-//             {" "}
-//             <div className="w-full flex flex-col md:flex-row bg-white shadow-lg rounded-lg gap-2 p-3 md:p-5">
-//               <div className="w-1/3 mx-auto">
-//                 <img
-//                   className="w-full rounded-md"
-//                   src={artifact.photo}
-//                   alt={`${artifact.name} artifact`}
-//                 />
-//               </div>
-//               <div className="w-2/3 px-2 md:px-5">
-//                 <h2 className="text-xl md:text-3xl font-bold mb-2">
-//                   {artifact.name}
-//                 </h2>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Discover_By:</span>{" "}
-//                   {artifact.discover_by}
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Artifact Type:</span>{" "}
-//                   {artifact.type}
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Present Location:</span>{" "}
-//                   {artifact.location}
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Description:</span>{" "}
-//                   {artifact.description}
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Created At:</span>{" "}
-//                   {artifact.create} years
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Discovered At:</span>{" "}
-//                   {artifact.discover}
-//                 </p>
-//                 <p className="text-gray-600 mb-2">
-//                   <span className="font-semibold">Application Method:</span>{" "}
-//                   {artifact.method}
-//                 </p>
-//                 <p className="text-gray-600 mb-4">
-//                   <span className="font-semibold">Fee:</span> ${artifact.fee}
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         ) : (
-//           <p>No details available. Please go back and select a artifact.</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ArtifactDetails;
-
 import { useContext, useEffect, useState } from "react";
 import Navbar from "../Shared/Navbar";
 import { useParams } from "react-router-dom";
@@ -103,12 +18,9 @@ const ArtifactDetails = () => {
       });
   }, [id]);
 
-  //   console.log(artifact);
-
   const handleLikeCount = () => {
     const count = artifact?.totalLikeCount + 1;
     const updateCount = { count };
-    console.log(updateCount);
 
     fetch(`https://time-treasures-server.vercel.app/artifacts/all/${id}/like`, {
       method: "PATCH",
@@ -119,7 +31,6 @@ const ArtifactDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setLikeCount(count);
       });
 
