@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Navbar from "../Shared/Navbar";
 
 const SignIn = () => {
-  const { logInUser, setUser } = useContext(AuthContext);
+  const { logInUser, setUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
@@ -27,6 +27,19 @@ const SignIn = () => {
       })
       .catch((err) => {
         toast("Given email or password is Invalid");
+      });
+  };
+
+  const handleLoginWithGoogle = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setUser(user);
+        navigate(from);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -94,6 +107,7 @@ const SignIn = () => {
             <div className="flex justify-center items-center">
               <div className="space-y-4 w-full">
                 <Link
+                  onClick={handleLoginWithGoogle}
                   to="/"
                   className="btn btn-outline w-full max-w-xs sm:max-w-sm md:max-w-md flex items-center justify-center space-x-2 rounded-full"
                 >

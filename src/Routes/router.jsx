@@ -8,6 +8,7 @@ import PrivateRoute from "./PrivateRoute";
 import ArtifactDetails from "../Components/Pages/ArtifactDetails";
 import MyArtifacts from "../Components/Pages/MyArtifacts";
 import ArtifactUpdatePage from "../Components/Pages/ArtifactUpdatePage";
+import ErrorPage from "../Components/Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "signIn",
     element: <SignIn></SignIn>,
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

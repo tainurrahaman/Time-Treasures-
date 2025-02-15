@@ -3,14 +3,13 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../Provider/AuthProvider";
-import axios from "axios";
 import Swal from "sweetalert2";
 import Navbar from "../Shared/Navbar";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebase.init";
 
 const SignUp = () => {
-  const { setUser, createNewUser } = useContext(AuthContext);
+  const { setUser, createNewUser, loginWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegistration = (e) => {
@@ -55,6 +54,17 @@ const SignUp = () => {
       })
       .catch((err) => {
         toast(err.message);
+      });
+  };
+
+  const handleSignupWithGoogle = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -141,6 +151,7 @@ const SignUp = () => {
             <div className="flex justify-center items-center">
               <div className="space-y-4 w-full">
                 <Link
+                  onClick={handleSignupWithGoogle}
                   to="/"
                   className="btn btn-outline w-full max-w-xs sm:max-w-sm md:max-w-md flex items-center justify-center space-x-2 rounded-full"
                 >
