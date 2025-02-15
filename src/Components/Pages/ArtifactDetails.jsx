@@ -110,7 +110,7 @@ const ArtifactDetails = () => {
     const updateCount = { count };
     console.log(updateCount);
 
-    fetch(`http://localhost:5000/artifacts/all/${id}`, {
+    fetch(`http://localhost:5000/artifacts/all/${id}/like`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

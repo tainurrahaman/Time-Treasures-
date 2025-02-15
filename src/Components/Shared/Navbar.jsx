@@ -124,7 +124,7 @@ const Navbar = () => {
             <Link
               onClick={handleLogout}
               to="/"
-              className="btn text-[10px] md:text-[16px] bg-[#A0153E] text-gray-100"
+              className="btn text-[10px] md:text-[16px] bg-[#A0153E] hover:bg-pink-950 text-gray-100"
             >
               Logout
             </Link>
@@ -134,7 +134,10 @@ const Navbar = () => {
             <Link to="/signUp" className="font-semibold text-gray-700">
               SignUp
             </Link>
-            <Link to="/signIn" className="btn bg-[#A0153E] text-gray-100">
+            <Link
+              to="/signIn"
+              className="btn bg-[#A0153E] hover:bg-pink-950 text-gray-100"
+            >
               Login
             </Link>
           </div>
