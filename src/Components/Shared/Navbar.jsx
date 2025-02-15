@@ -69,7 +69,7 @@ const Navbar = () => {
                   <Link to="/addArtifacts">Add Artifacts</Link>
                 </li>
                 <li>
-                  <Link to="/visaApplication">My Visa Application</Link>
+                  <Link to="/myArtifact">MyAddedArtifact</Link>
                 </li>
                 <li>
                   <Link to="/userAddedVisa">My Added Visa</Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
                 <Link to="/addArtifacts">Add Artifacts</Link>
               </li>
               <li>
-                <Link to="/visaApplication">My Visa Application</Link>
+                <Link to="/myArtifact">MyAddedArtifact</Link>
               </li>
               <li>
                 <Link to="/userAddedVisa">My Added Visa</Link>

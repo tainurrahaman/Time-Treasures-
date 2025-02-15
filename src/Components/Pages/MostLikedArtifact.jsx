@@ -27,7 +27,7 @@ const MostLikedArtifact = () => {
         </div>
 
         {/* Artifact Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 px-4 sm:px-6 lg:px-8 mt-10">
           {mostLiked.map((visa) => (
             <div
               className="rounded-md bg-gray-100 hover:shadow-lg transition-shadow duration-300"

@@ -93,7 +93,7 @@ const ArtifactDetails = () => {
   const { loading } = useContext(AuthContext);
   const { id } = useParams();
   const [artifact, setArtifact] = useState(null);
-  const [likeCount, setLikeCount] = useState(null);
+  const [likeCount, setLikeCount] = useState(0);
 
   useEffect(() => {
     fetch(`http://localhost:5000/artifacts/all/${id}`)
