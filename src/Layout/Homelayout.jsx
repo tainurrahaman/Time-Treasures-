@@ -4,6 +4,7 @@ import Banner from "../Components/Banner";
 import Vision from "../Components/Vision";
 import History from "../Components/History";
 import MostLikedArtifact from "../Components/Pages/MostLikedArtifact";
+import Subscribe from "../Components/Pages/Subscribe";
 
 const Homelayout = () => {
   return (
@@ -14,6 +15,7 @@ const Homelayout = () => {
         <History></History>
         <MostLikedArtifact></MostLikedArtifact>
         <Vision></Vision>
+        <Subscribe></Subscribe>
       </div>
       <Footer></Footer>
     </div>
