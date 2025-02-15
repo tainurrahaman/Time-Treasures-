@@ -69,7 +69,7 @@ const MostLikedArtifact = () => {
             If you want to see all the Artifact's, Click{" "}
             <Link
               to="/allArtifacts"
-              className="btn bg-[#034833] text-gray-100 hover:bg-gray-700 text-xs sm:text-sm md:text-base"
+              className="btn bg-[#A0153E] text-gray-100 hover:bg-gray-700 text-xs sm:text-sm md:text-base"
             >
               All Artifact
             </Link>

@@ -9,6 +9,7 @@ import ArtifactDetails from "../Components/Pages/ArtifactDetails";
 import MyArtifacts from "../Components/Pages/MyArtifacts";
 import ArtifactUpdatePage from "../Components/Pages/ArtifactUpdatePage";
 import ErrorPage from "../Components/Pages/ErrorPage";
+import ResetPassword from "../Components/Pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
         <ArtifactUpdatePage></ArtifactUpdatePage>
       </PrivateRoute>
     ),
+  },
+  {
+    path: "resetPassword",
+    element: <ResetPassword></ResetPassword>,
   },
   {
     path: "/signUp",

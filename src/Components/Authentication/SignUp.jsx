@@ -20,6 +20,17 @@ const SignUp = () => {
     const photo = form.get("photo");
     const password = form.get("password");
 
+    if (
+      password.length < 6 ||
+      !/[A-Z]/.test(password) ||
+      !/[a-z]/.test(password)
+    ) {
+      toast(
+        "Password must be at least 6 characters long, contain an uppercase letter, and a lowercase letter."
+      );
+      return;
+    }
+
     const newUser = { name, email, photo };
 
     createNewUser(email, password)
