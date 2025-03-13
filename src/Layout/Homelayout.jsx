@@ -9,8 +9,9 @@ import Subscribe from "../Components/Pages/Subscribe";
 const Homelayout = () => {
   return (
     <div>
-      <div className="w-11/12 mx-auto my-5 font-roboto font-normal">
-        <Navbar></Navbar>
+      {" "}
+      <Navbar></Navbar>
+      <div className="w-11/12 mx-auto my-5 font-roboto font-normal pt-20">
         <Banner></Banner>
         <History></History>
         <MostLikedArtifact></MostLikedArtifact>

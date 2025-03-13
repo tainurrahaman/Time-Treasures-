@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar px-4 sm:px-6 lg:px-8 bg-base-100">
+    <div className="navbar px-4 fixed top-0 left-0 w-full bg-white shadow-md z-50 p-2 transition-all duration-300">
       {/* Navbar Start: Logo and Mobile Menu */}
       <div className="navbar-start gap-2 ">
         {/* Logo and Brand Name */}
@@ -76,7 +76,6 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-
       {/* Navbar Center: Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4 ">
@@ -98,7 +97,6 @@ const Navbar = () => {
           )}
         </ul>
       </div>
-
       {/* Navbar End: Login/Logout and User Profile */}
       <div className="navbar-end">
         {user?.email ? (
