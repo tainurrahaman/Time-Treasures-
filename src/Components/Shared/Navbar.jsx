@@ -1,10 +1,19 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogout = () => {
     logoutUser()
@@ -16,8 +25,69 @@ const Navbar = () => {
       });
   };
 
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-medium ${
+              isActive ? "bg-[#A0153E] text-white" : " text-black"
+            }`
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/allArtifacts"
+          className={({ isActive }) =>
+            `px-4 py-2 rounded font-medium ${
+              isActive ? "bg-[#A0153E] text-white" : " text-black"
+            }`
+          }
+        >
+          All Artifact
+        </NavLink>
+      </li>
+      {user?.email && (
+        <>
+          <li>
+            <NavLink
+              to="/addArtifacts"
+              className={({ isActive }) =>
+                `px-4 py-2 rounded font-medium ${
+                  isActive ? "bg-[#A0153E] text-white" : " text-black"
+                }`
+              }
+            >
+              Add Artifacts
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myArtifact"
+              className={({ isActive }) =>
+                `px-4 py-2 rounded font-medium ${
+                  isActive ? "bg-[#A0153E] text-white" : " text-black"
+                }`
+              }
+            >
+              MyArtifact
+            </NavLink>
+          </li>
+        </>
+      )}
+    </>
+  );
+
   return (
-    <div className="navbar px-4 fixed top-0 left-0 w-full bg-white shadow-md z-50 p-2 transition-all duration-300">
+    <div
+      className={`navbar px-4 fixed top-0 left-0 w-full p-4 transition-all duration-300 z-50 ${
+        isScrolled ? "bg-white/30 backdrop-blur-md shadow-lg" : "bg-white"
+      }`}
+    >
       {/* Navbar Start: Logo and Mobile Menu */}
       <div className="navbar-start gap-2 ">
         {/* Logo and Brand Name */}
@@ -57,45 +127,13 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow "
           >
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/allArtifacts">All Artifact</Link>
-            </li>
-            {user?.email && (
-              <>
-                <li>
-                  <Link to="/addArtifacts">Add Artifacts</Link>
-                </li>
-                <li>
-                  <Link to="/myArtifact">MyArtifact</Link>
-                </li>
-              </>
-            )}
+            {links}
           </ul>
         </div>
       </div>
       {/* Navbar Center: Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-4 ">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/allArtifacts">All Artifact</Link>
-          </li>
-          {user?.email && (
-            <>
-              <li>
-                <Link to="/addArtifacts">Add Artifacts</Link>
-              </li>
-              <li>
-                <Link to="/myArtifact">MyArtifact</Link>
-              </li>
-            </>
-          )}
-        </ul>
+        <ul className="menu menu-horizontal px-1 gap-4 ">{links}</ul>
       </div>
       {/* Navbar End: Login/Logout and User Profile */}
       <div className="navbar-end">
