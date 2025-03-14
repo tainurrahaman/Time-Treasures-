@@ -8,6 +8,8 @@ const AllArtifacts = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("all");
 
+  console.log(loadedArtifact);
+
   // Handle search and filter functionality
   const handleSearch = () => {
     let filtered = loadedArtifact;
@@ -25,10 +27,9 @@ const AllArtifacts = () => {
       filtered = filtered.sort(
         (a, b) => new Date(a.discover) - new Date(b.discover)
       );
-    } else if (selectedFilter === "created_at") {
-      filtered = filtered.sort(
-        (a, b) => new Date(a.created_at) - new Date(b.created_at)
-      );
+    } else if (selectedFilter === "type") {
+      // Filter by type
+      filtered = filtered.sort((a, b) => a.type.localeCompare(b.type)); // Sort by type alphabetically
     }
     setFilteredArtifacts(filtered);
   };
@@ -69,7 +70,7 @@ const AllArtifacts = () => {
           >
             <option value="all">All</option>
             <option value="discover">Sort by Discover Date</option>
-            <option value="created_at">Sort by Created Date</option>
+            <option value="type">Sort by Type</option> {/* Changed to 'type' */}
           </select>
           <button
             onClick={handleFilter}
@@ -100,7 +101,7 @@ const AllArtifacts = () => {
                 <p>Present Location: {artifact.location}</p>
                 <p>Type: {artifact.type}</p>
                 <p>Discovered: {artifact.discover}</p>
-                <p>Created At: {artifact.created_at}</p>
+                <p>Created At: {artifact.create}</p>
               </div>
               <div className="flex justify-center items-center mt-3">
                 <Link
