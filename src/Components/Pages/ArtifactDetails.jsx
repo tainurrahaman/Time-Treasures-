@@ -42,22 +42,22 @@ const ArtifactDetails = () => {
   }
 
   return (
-    <div className="w-11/12 mx-auto my-4">
+    <div className="w-11/12 mx-auto my-4 pt-20">
       <Navbar></Navbar>
       <div className="p-4 sm:p-6 rounded-md">
         {artifact?.email ? (
-          <div className="w-full md:w-2/3 lg:w-1/2 mx-auto bg-gray-100 p-2 sm:p-4 md:p-5 rounded-lg">
+          <div className="w-full md:w-2/3 lg:w-1/2 mx-auto bg-gray-100 p-2 sm:p-4 md:p-5 rounded-lg border border-gray-400 hover:shadow-[4px_4px_0_0] duration-500 hover:-translate-1">
             <div className="w-full flex flex-col md:flex-row bg-white shadow-lg rounded-lg gap-4 p-3 sm:p-4 md:p-5">
               {/* Image Section */}
-              <div className="w-full md:w-1/3 mx-auto">
+              <div className="w-full md:w-2/4 mx-auto">
                 <img
-                  className="w-full h-[200px] md:h-auto rounded-md object-center md:object-cover"
+                  className="w-full h-[200px] md:h-50vh rounded-md object-center md:object-cover"
                   src={artifact.photo}
                   alt={`${artifact.artifacts_name} artifact`}
                 />
               </div>
               {/* Details Section */}
-              <div className="w-full md:w-2/3 px-2 ">
+              <div className="w-full md:w-2/4 px-2 ">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-4">
                   {artifact.artifacts_name}
                 </h2>
@@ -85,10 +85,10 @@ const ArtifactDetails = () => {
                   <span className="font-semibold">Discovered At:</span>{" "}
                   {artifact.discover}
                 </p>
-                <div className="flex rounded-2xl justify-center bg-[#A0153E]  mt-5">
+                <div className="flex rounded-md justify-center bg-[#A0153E]  mt-5">
                   <button
                     onClick={handleLikeCount}
-                    className="flex items-center justify-between w-full bg-[#A0153E] border-none btn text-white gap-1 text-[18px] font-bold"
+                    className="flex items-center justify-between w-full bg-[#A0153E] border-none btn text-white gap-1 text-[18px] font-bold hover:bg-[#f787a8ce] hover:text-black"
                   >
                     <div className="flex items-center ">
                       <BiLike></BiLike>

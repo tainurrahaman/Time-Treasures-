@@ -11,7 +11,7 @@ const Homelayout = () => {
     <div>
       {" "}
       <Navbar></Navbar>
-      <div className="w-11/12 mx-auto my-5 font-roboto font-normal pt-20">
+      <div className="w-11/12 mx-auto my-5 font-roboto font-normal pt-14 lg:pt-20">
         <Banner></Banner>
         <History></History>
         <MostLikedArtifact></MostLikedArtifact>

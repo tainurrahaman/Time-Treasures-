@@ -32,7 +32,9 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-medium ${
-              isActive ? "bg-[#A0153E] text-white" : " text-black"
+              isActive
+                ? "bg-[#A0153E] text-white hover:bg-pink-950"
+                : " text-black"
             }`
           }
         >
@@ -44,7 +46,9 @@ const Navbar = () => {
           to="/allArtifacts"
           className={({ isActive }) =>
             `px-4 py-2 rounded font-medium ${
-              isActive ? "bg-[#A0153E] text-white" : " text-black"
+              isActive
+                ? "bg-[#A0153E] text-white hover:bg-pink-950"
+                : " text-black"
             }`
           }
         >
@@ -58,7 +62,9 @@ const Navbar = () => {
               to="/addArtifacts"
               className={({ isActive }) =>
                 `px-4 py-2 rounded font-medium ${
-                  isActive ? "bg-[#A0153E] text-white" : " text-black"
+                  isActive
+                    ? "bg-[#A0153E] text-white hover:bg-pink-950"
+                    : " text-black"
                 }`
               }
             >
@@ -70,7 +76,9 @@ const Navbar = () => {
               to="/myArtifact"
               className={({ isActive }) =>
                 `px-4 py-2 rounded font-medium ${
-                  isActive ? "bg-[#A0153E] text-white" : " text-black"
+                  isActive
+                    ? "bg-[#A0153E] text-white hover:bg-pink-950"
+                    : " text-black"
                 }`
               }
             >

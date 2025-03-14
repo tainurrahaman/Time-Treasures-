@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -17,18 +18,19 @@ const Banner = () => {
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 lg:gap-10 my-4 md:my-14">
         {/* Text Section */}
         <div className="w-full md:w-2/5 text-center md:text-left">
-          <p className="font-extralight font-pacifico text-xl sm:text-2xl lg:text-3xl mb-4">
-            Echoes of the Ages
-          </p>
-          <h3 className="font-bebas-neue text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-            Explore the Legacy of the Past
-          </h3>
-          <p className="font-roboto  lg:font-bebas-neue text-lg sm:text-xl md:text-2xl lg:text-4xl mt-4">
-            Discover, Track, and Preserve the World’s Most Fascinating
-            Historical Artifacts
-          </p>
+          <Fade direction="left">
+            <p className="font-extralight font-pacifico text-xl sm:text-2xl lg:text-3xl mb-4">
+              Echoes of the Ages
+            </p>
+            <h3 className="font-bebas-neue text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              Explore the Legacy of the Past
+            </h3>
+            <p className="font-roboto  lg:font-bebas-neue text-lg sm:text-xl md:text-2xl lg:text-4xl mt-4">
+              Discover, Track, and Preserve the World’s Most Fascinating
+              Historical Artifacts
+            </p>
+          </Fade>
         </div>
-
         {/* Carousel Section */}
         <div className="w-full md:w-3/5">
           {/* Slide 1 */}

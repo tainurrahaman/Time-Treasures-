@@ -60,7 +60,7 @@ const AddArtifactPage = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto my-4 font-roboto">
+    <div className="w-11/12 mx-auto my-4 font-roboto pt-20">
       <Navbar></Navbar>
       <div className="flex justify-center items-center min-h-screen">
         <div className="w-full md:w-3/4 lg:w-1/2 max-w-4xl shadow-xl bg-white rounded-2xl p-4 sm:p-6 md:p-8">
@@ -179,7 +179,10 @@ const AddArtifactPage = () => {
                 className="input input-bordered w-full"
               />
             </div>
-            <button type="submit" className="btn btn-primary w-full mb-5">
+            <button
+              type="submit"
+              className="btn bg-[#A0153E] text-white font-assistant text-xs sm:text-sm md:text-base hover:bg-[#f787a8ce] hover:text-black w-full mb-5"
+            >
               Add Artifact
             </button>
           </form>

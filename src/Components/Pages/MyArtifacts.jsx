@@ -47,7 +47,7 @@ const MyArtifacts = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto my-4 sm:my-6 md:my-8">
+    <div className="w-11/12 mx-auto my-4 sm:my-6 md:my-8 pt-20">
       <Navbar></Navbar>
       <div className="p-4 sm:p-6 md:p-8">
         {/* Heading */}

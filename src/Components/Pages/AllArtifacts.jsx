@@ -27,7 +27,7 @@ const AllArtifacts = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto my-4">
+    <div className="w-11/12 mx-auto my-4 pt-20">
       <Navbar></Navbar>
 
       {/* Search Input and Button */}
@@ -52,7 +52,7 @@ const AllArtifacts = () => {
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-10">
         {filteredArtifacts.map((artifact) => (
           <div
-            className="rounded-md bg-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            className="rounded-md bg-gray-100 shadow-sm hover:shadow-md transition-shadow "
             key={artifact._id}
           >
             <div className="mb-3">
