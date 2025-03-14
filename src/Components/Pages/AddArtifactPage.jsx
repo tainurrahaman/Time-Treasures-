@@ -181,7 +181,7 @@ const AddArtifactPage = () => {
             </div>
             <button
               type="submit"
-              className="btn bg-[#A0153E] text-white font-assistant text-xs sm:text-sm md:text-base hover:bg-[#f787a8ce] hover:text-black w-full mb-5"
+              className="btn bg-[#A0153E] text-white font-assistant text-xs sm:text-sm md:text-base hover:bg-pink-950 w-full mb-5"
             >
               Add Artifact
             </button>
